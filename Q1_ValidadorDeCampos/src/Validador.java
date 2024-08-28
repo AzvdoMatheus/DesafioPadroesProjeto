@@ -1,6 +1,8 @@
 public class Validador{
     public enum Tipo { EMAIL, INTEIRO, MATRICULA }
 
+    //a 
+    
     public boolean valida(Tipo tipo,String valor){
         switch(tipo){
             case INTEIRO:
