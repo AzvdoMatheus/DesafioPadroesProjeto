@@ -1,4 +1,4 @@
-public class ValidadorEmail implements ValidadorStrategy{
+public class ValidadorEmail implements IValidadorStrategy{
     @Override 
     public boolean valida(String valor){
         int posA = valor.indexOf('@');

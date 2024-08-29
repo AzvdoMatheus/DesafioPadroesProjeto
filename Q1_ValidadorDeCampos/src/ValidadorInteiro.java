@@ -1,4 +1,4 @@
-public class ValidatorInteiro implements ValidadorStrategy{
+public class ValidadorInteiro implements IValidadorStrategy{
     @Override 
     public boolean valida(String valor){
         for(int i=0;i<valor.length();i++){

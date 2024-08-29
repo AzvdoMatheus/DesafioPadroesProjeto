@@ -1,7 +1,9 @@
-public class ValidatorMatricula implements ValidadorStrategy{
+public class ValidadorMatricula implements IValidadorStrategy{
+    IValidadorStrategy inteiro = new ValidadorInteiro();
+
     @Override 
     public boolean valida(String valor){
-        if (!valida(Tipo.INTEIRO,valor)){
+        if (!inteiro.valida(valor)){
             return false;
         }else{
             int sum = 0;
@@ -13,6 +15,7 @@ public class ValidatorMatricula implements ValidadorStrategy{
                 return true;
             }
         }
+        return false;
     } 
     
 }
