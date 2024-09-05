@@ -1,4 +1,4 @@
 public interface ICodificador{
-    public String codifica(String str);
-    public String deCodifica(String str);
+    public String codifica();
+    public String deCodifica();
 }

@@ -1,15 +1,14 @@
 import java.util.HashMap;
 import java.util.Map;
 
-
-public class CodificaSimples implements ICodificador {
+public class CodificaDesloca implements ICodificador {
     private ICodificador codificadorDecorado;
     private String str;
     private Map<Character, Character> tabCod;
     private Map<Character, Character> tabDeCod;
 
 
-    public CodificaSimples(ICodificador codificadorDecorado) {
+    public CodificaDesloca(ICodificador codificadorDecorado) {
         this.codificadorDecorado = codificadorDecorado;
         str = codificadorDecorado.codifica();
         tabCod = new HashMap<>();
@@ -29,33 +28,33 @@ public class CodificaSimples implements ICodificador {
 
     @Override
     public String codifica() {
+
         char[] aux = str.toCharArray();
         char[] resp = new char[str.length()];
-        for (int i = 0; i < aux.length; i++) {
-            if (tabCod.containsKey(aux[i])) {
-                resp[i] = tabCod.get(aux[i]);
-            } else {
-                resp[i] = aux[i];
-            }
+        for(int i=0;i<aux.length;i++){
+            resp[i] = (char)(Character.valueOf(aux[i])+1);
         }
         str = new String(resp);
         return str;
     }
 
 
+    
     @Override
     public String deCodifica() {
         char[] aux = str.toCharArray();
         char[] resp = new char[str.length()];
-        for (int i = 0; i < aux.length; i++) {
-            if (tabDeCod.containsKey(aux[i])) {
-                resp[i] = tabDeCod.get(aux[i]);
-            } else {
-                resp[i] = aux[i];
-            }
+        for(int i=0;i<aux.length;i++){
+            resp[i] = (char)(Character.valueOf(aux[i])-1);
         }
         str = new String(resp);
         return str;
     }
 
+
+
+
+
+ 
 }
+
